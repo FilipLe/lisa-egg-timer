@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #282828;
+  background-image: url('../public/background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) { /* Tablet and smaller */
+  body {
+    background-size: contain; /* Adjust background size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) { /* Mobile */
+  body {
+    background-size: cover; /* Ensure it covers the screen */
+    background-attachment: fixed; /* Optional: Keep the background fixed */
+  }
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.egg-selector {
+  text-align: center;
+  border: 3px solid #fff;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.egg-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+}
+
+.egg-option {
+  cursor: pointer;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.egg-option p {
+  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.egg-crack {
+  background-color: yellow;
+  width: 100%;
+  transition: height 1s linear;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.egg-cracked-final {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  animation: crack 1s infinite;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@keyframes crack {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }

@@ -1,0 +1,46 @@
+body {
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.egg-timer {
+  padding: 20px; /* Ensure padding for the content */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.timer-text {
+    color: red; /* Set text color to red */
+    font-weight: bold; /* Make text bold */
+    transition: text-shadow 0.3s ease, border 0.3s ease; /* Smooth transition for glow effect and border */
+    padding: 15px 30px; /* Increased padding for a bigger button-like appearance */
+    border: 2px solid transparent; /* Initial border */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Make it behave like a button */
+    text-align: center; /* Center the text */
+    background-color: rgba(255, 255, 255, 0.9); /* Set a solid background color for better visibility */
+  }
+
+.glow {
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 
+               0 0 10px rgba(255, 0, 0, 0.5), 
+               0 0 15px rgba(255, 0, 0, 0.3); /* Glowing effect */
+  border: 2px solid rgba(255, 0, 0, 0.7); /* Glowing border */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timer-text {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-text {
+    font-size: 1.2em; /* Further adjust font size for very small screens */
+    padding: 6px 12px; /* Further adjust padding */
+  }
+}

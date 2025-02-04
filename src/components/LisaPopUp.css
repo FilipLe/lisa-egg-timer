@@ -1,0 +1,91 @@
+/* Initial styles for the egg image popup */
+.egg-popup {
+    position: fixed; /* Ensure it stays in the center of the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Correct centering */
+    opacity: 0; /* Invisible initially */
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Smooth transition */
+    width: 100%; /* Full width for the popup */
+    max-width: 200px; /* Limit the maximum width */
+    z-index: 1000; /* Ensure it appears above other elements */
+    scale: 0; /* Set initial scale for the scaling animation */
+}
+
+.egg-popup.show {
+    opacity: 1; /* Make it visible */
+    scale: 1; /* Scale to full size */
+    animation: eggExpandShrink 6s ease-out; /* Animation for expansion and shrinking */
+}
+
+.egg-image {
+    display: block;
+    margin: 0 auto;
+    width: 120%;
+}
+  
+/* Bounce effect */
+@keyframes eggExpand {
+    0% {
+        scale: 0.1;
+    }
+    50% {
+        scale: 1.2; /* Overshoot for a bounce effect */
+    }
+    100% {
+        scale: 1; /* Settle to the final size */
+    }
+}
+
+@keyframes eggExpandShrink {
+    0%, 100% {
+        scale: 1; /* Start and end at full size */
+    }
+    10% {
+        scale: 1.1; /* Expand slightly */
+    }
+    20% {
+        scale: 0.9; /* Shrink slightly */
+    }
+    30% {
+        scale: 1.1; /* Expand slightly again */
+    }
+    40% {
+        scale: 0.9; /* Shrink slightly again */
+    }
+    50% {
+        scale: 1.1; /* Expand slightly again */
+    }
+    60% {
+        scale: 0.9; /* Shrink slightly again */
+    }
+    70% {
+        scale: 1.1; /* Expand slightly again */
+    }
+    80% {
+        scale: 0.9; /* Shrink slightly again */
+    }
+    90% {
+        scale: 1.1; /* Expand slightly again */
+    }
+}
+
+.restart-button {
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px; /* Button padding */
+    background-color: red; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.2em; /* Increased font size */
+    font-weight: bold; /* Make font bold */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    display: block; /* Make it a block element to center */
+    width: 100%; /* Full width for centering */
+    text-align: center; /* Center the text inside the button */
+}
+
+.restart-button:hover {
+    background-color: darkred; /* Darker shade on hover */
+}
